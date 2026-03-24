@@ -1,1 +1,184 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Profile</title><style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#667eea,#764ba2);font-family:-apple-system,sans-serif;color:#fff}.card{background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border-radius:24px;padding:48px;text-align:center;border:1px solid rgba(255,255,255,.2)}h1{margin:0 0 8px;font-size:24px}p{margin:0;opacity:.8}</style></head><body><div class="card"><h1>프로필 준비 중</h1><p>곧 멋진 홈페이지가 만들어집니다</p></div></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홍길동 - 시설관리팀장</title>
+  <meta name="description" content="홍길동 | 시설관리팀장 at 서울대학교병원">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <style>
+    .card-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .dark .card-glass {
+      background: rgba(30, 30, 30, 0.85);
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .dark .gradient-bg {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    .company-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .company-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    .contact-item {
+      transition: transform 0.2s;
+    }
+    .contact-item:hover {
+      transform: translateX(4px);
+    }
+    .profile-ring {
+      background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+      padding: 3px;
+    }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4 font-sans">
+
+  <!-- 다크 모드 토글 -->
+  <button id="theme-toggle" class="fixed top-4 right-4 z-50 w-10 h-10 rounded-full card-glass shadow-lg flex items-center justify-center text-lg border border-white/20 hover:scale-110 transition-transform" aria-label="테마 전환">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <!-- 메인 카드 -->
+  <div class="card-glass rounded-3xl shadow-2xl w-full max-w-md overflow-hidden border border-white/20">
+
+    <!-- 상단 헤더 배경 -->
+    <div class="h-24 bg-gradient-to-r from-indigo-500 to-purple-600 relative">
+      <div class="absolute inset-0 opacity-20">
+        <svg viewBox="0 0 400 100" class="w-full h-full" preserveAspectRatio="none">
+          <path d="M0,50 Q100,0 200,50 T400,50 V100 H0 Z" fill="white" opacity="0.1"/>
+          <path d="M0,70 Q100,30 200,70 T400,70 V100 H0 Z" fill="white" opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 프로필 섹션 -->
+    <div class="px-8 -mt-14 relative">
+      <!-- 프로필 사진 -->
+      <div class="profile-ring w-28 h-28 rounded-full mx-auto shadow-xl">
+        <img
+          id="profile-photo"
+          src=""
+          alt="홍길동 프로필 사진"
+          class="w-full h-full rounded-full object-cover"
+          onerror="this.style.display='none'; document.getElementById('profile-fallback').style.display='flex';"
+        >
+        <div
+          id="profile-fallback"
+          class="w-full h-full rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 items-center justify-center text-white text-3xl font-bold"
+          style="display: none;"
+        >
+          홍
+        </div>
+      </div>
+
+      <!-- 이름 & 직책 -->
+      <div class="text-center mt-4">
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">홍길동</h1>
+        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mt-1">시설관리팀장</p>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mt-0.5">서울대학교병원</p>
+      </div>
+    </div>
+
+    <!-- 구분선 -->
+    <div class="mx-8 mt-6 mb-4 border-t border-gray-200/50 dark:border-gray-700/50"></div>
+
+    <!-- 자기소개 -->
+    <div class="px-8">
+      <h2 class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">소개</h2>
+      <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">대형병원 시설관리 및 에너지관리 전문가입니다.</p>
+    </div>
+
+    <!-- 구분선 -->
+    <div class="mx-8 mt-4 mb-4 border-t border-gray-200/50 dark:border-gray-700/50"></div>
+
+    <!-- 연락처 -->
+    <div class="px-8">
+      <h2 class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">연락처</h2>
+
+      <div class="space-y-3">
+        <!-- 전화번호 -->
+        <a href="tel:02-2072-0000" class="contact-item flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+          <div class="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+          <span class="text-sm">02-2072-0000</span>
+        </a>
+
+        <!-- 이메일 -->
+        <a href="mailto:test@example.com" class="contact-item flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+          <div class="w-9 h-9 rounded-xl bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <span class="text-sm">test@example.com</span>
+        </a>
+
+        <!-- 주소 (선택) -->
+        
+      </div>
+    </div>
+
+    <!-- 회사 홈페이지 버튼 -->
+    <div class="px-8 mt-6 mb-8">
+      <a href="https://www.snuh.org" target="_blank" rel="noopener noreferrer" class="company-btn block w-full text-center text-white font-semibold py-3 px-6 rounded-2xl shadow-lg">
+        <span class="flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+          </svg>
+          서울대학교병원 홈페이지 방문
+        </span>
+      </a>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="px-8 pb-6 text-center">
+      <p class="text-xs text-gray-400 dark:text-gray-600">Powered by OpenClaw</p>
+    </div>
+  </div>
+
+  <script>
+    // 다크 모드 토글
+    const toggle = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+
+    // 시스템 설정 확인
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      html.classList.add('dark');
+      icon.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      icon.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
